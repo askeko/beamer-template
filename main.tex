@@ -1,0 +1,94 @@
+\documentclass[12pt, aspectratio=169, usepdftitle=false, xcolor=svgnames]{beamer}
+
+% \usepackage[danish]{babel}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{svg}
+\usepackage{graphicx}
+
+\usepackage{multirow}
+
+\useoutertheme{infolines}
+\setbeamertemplate{headline}{} % remove header
+
+% fjern AAU fra hvert slide ud for navn.
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\definecolor{aaublue}{RGB}{33,26,82}% dark blue
+
+\setbeamercolor{progress bar}{fg=blue}
+% \setbeamercolor{progress bar}{fg=aaublue}
+\setbeamercolor{title separator}{fg=aaublue}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{alerted text}{fg=aaublue}
+\setbeamercolor{example text}{fg=aaublue}
+% \setbeamerfont{alerted text}{series=\itshape} %italics on alerts
+
+\usepackage{minted}
+\setminted[js]{framesep=6pt, style=colorful, fontsize=\footnotesize, breaklines, autogobble}
+\setminted[bash]{frame=topline, framesep=6pt, style=colorful, breaklines, autogobble}
+\setminted[rust]{framesep=6pt, style=colorful, fontsize=\scriptsize, breaklines, autogobble}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\usepackage{clrscode3e}
+
+\usepackage{caption}
+\captionsetup{font=scriptsize,labelfont=scriptsize}
+% \captionsetup[sub]{font=footnotesize,labelfont=footnotesize}
+% \captionsetup[algorithm]{font=scriptsize}
+\usepackage{subcaption}
+
+
+
+% \SetAlCapNameFnt{\scriptsize}
+% \SetAlCapFnt{\scriptsize}
+
+
+\hypersetup{
+    pdftitle={Title},
+    pdfauthor={Aske}
+}
+
+\usepackage{xcolor}
+\definecolor{PineGreen}{RGB}{1, 121, 111}
+
+% meta info
+\title{Title}
+\subtitle{\small Subtitle}
+\author{Aske}
+\date{Date}
+\institute{Aalborg University}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{figures/aau_logo.eps}}
+
+
+\begin{document}
+
+\maketitle
+
+\author[Aske]{}
+\input{chapters/ch1.tex}
+
+\end{document}
